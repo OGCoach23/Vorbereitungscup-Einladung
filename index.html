@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vorbereitungs-Cup 2025 | SV München-Laim e.V.</title>
-    <meta name="description" content="Handball Vorbereitungs-Cup 2025 am 07.09.2025 in der Laimer Halle. Jetzt alle Infos!">
-    <!-- Google Fonts: Baloo 2 -->
+    <title>Vorbereitungs-Cup 2026 | SV München-Laim e.V.</title>
+    <meta name="description" content="Handball Vorbereitungs-Cup 2026 – Samstag, 5. September 2026 in der Riegerhofhalle München-Laim.">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -15,7 +14,6 @@
             --accent-blue: #183577;
             --white: #fff;
             --light-gray: #f5f7fa;
-            --dark-bg: #1a1a1a;
             --text-dark: #222;
         }
         body {
@@ -32,16 +30,16 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
         .nav-logo {
             display: flex;
             align-items: center;
             gap: 0.75rem;
         }
-        .nav-logo img {
-            height: 48px;
-            width: auto;
-        }
+        .nav-logo img { height: 48px; width: auto; }
         .nav-title {
             font-size: 1.5rem;
             font-weight: 700;
@@ -52,6 +50,7 @@
             list-style: none;
             display: flex;
             gap: 1.5rem;
+            margin: 0; padding: 0;
         }
         .nav-links a {
             color: var(--white);
@@ -59,14 +58,13 @@
             font-weight: 600;
             font-size: 1.07rem;
         }
-        .nav-links a:hover {
-            text-decoration: underline;
-        }
+        .nav-links a:hover { text-decoration: underline; }
+
+        /* HERO */
         .hero {
             background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
-            padding: 3.5rem 0 2rem 0;
+            padding: 3.5rem 0 2.5rem 0;
             text-align: center;
-            position: relative;
         }
         .hero h1 {
             color: var(--white);
@@ -75,9 +73,10 @@
             letter-spacing: -1px;
         }
         .hero-date {
-            color: var(--accent-blue);
-            font-size: 1.25rem;
-            font-weight: 600;
+            color: #ffd700;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
         .hero-subtitle {
             color: var(--white);
@@ -92,12 +91,23 @@
             margin: 2rem 0 0 0;
             box-shadow: 0 4px 20px rgba(74,155,142,0.09);
             text-align: left;
-            max-width: 340px;
+            max-width: 400px;
             font-size: 1.07rem;
         }
-        .hero-info strong {
+        .hero-info strong { color: var(--dark-green); }
+        .badge-invite {
+            display: inline-block;
+            background: #ffd700;
             color: var(--dark-green);
+            font-weight: 700;
+            font-size: 1.08rem;
+            padding: 0.45rem 1.4rem;
+            border-radius: 30px;
+            margin-bottom: 1.2rem;
+            letter-spacing: 1px;
         }
+
+        /* SECTIONS */
         .section {
             max-width: 1100px;
             margin: 0 auto;
@@ -109,11 +119,12 @@
             text-align: center;
             margin-bottom: 2rem;
         }
-        /* TEAM KARTEN */
+
+        /* TEAMS */
         .teams-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
             margin-top: 2rem;
         }
         .team-card {
@@ -126,56 +137,49 @@
             align-items: flex-start;
             border-left: 7px solid var(--primary-green);
             transition: box-shadow 0.2s, border-color 0.2s;
-            min-height: 430px;
-            position: relative;
+            min-height: 200px;
         }
         .team-card:hover {
             box-shadow: 0 8px 30px rgba(33,115,92,0.17);
             border-left-color: var(--accent-blue);
         }
-        .team-photo {
-            width: 100%;
-            max-height: 145px;
-            object-fit: cover;
+        .team-card.placeholder {
+            border-left-color: #ccc;
+            background: #fafafa;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .team-placeholder-icon { font-size: 2.5rem; margin-bottom: 0.5rem; opacity: 0.2; }
+        .team-placeholder-text { color: #aaa; font-size: 1rem; font-weight: 600; }
+        .team-logo {
+            width: 70px; height: 70px;
+            object-fit: contain;
             border-radius: 9px;
-            margin-bottom: 0.85rem;
-            background: #dbeafe;
+            margin-bottom: 0.75rem;
+            background: #f0f4f0;
         }
-        .team-name {
-            font-size: 1.23rem;
-            color: var(--accent-blue);
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-        }
-        .team-nick {
-            color: var(--primary-green);
-            font-size: 1.08rem;
-            margin-bottom: 0.6rem;
-            font-weight: 600;
-        }
-        .team-liga {
-            font-size: 1.03rem;
-            margin-bottom: 1.0rem;
-        }
+        .team-name { font-size: 1.15rem; color: var(--accent-blue); font-weight: 700; margin-bottom: 0.2rem; }
+        .team-nick { color: var(--primary-green); font-size: 1rem; margin-bottom: 0.5rem; font-weight: 600; }
+        .team-liga { font-size: 0.97rem; margin-bottom: 0.9rem; color: #555; }
         .team-link {
             display: inline-block;
-            padding: 0.4rem 1.15rem;
+            padding: 0.35rem 1rem;
             color: var(--white);
             background: var(--accent-blue);
             border-radius: 18px;
             text-decoration: none;
-            font-size: 1.03rem;
+            font-size: 0.97rem;
             font-weight: 600;
             transition: background 0.2s;
             margin-top: auto;
         }
-        .team-link:hover {
-            background: var(--primary-green);
-        }
-        /* Standard Info- und Programm-Karten */
+        .team-link:hover { background: var(--primary-green); }
+
+        /* INFO CARDS */
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
             margin-top: 2rem;
         }
@@ -184,16 +188,9 @@
             border-radius: 13px;
             padding: 1.3rem 1.5rem;
             box-shadow: 0 4px 20px rgba(74,155,142,0.06);
-            min-height: 180px;
         }
-        .info-card h3 {
-            margin: 0 0 1rem 0;
-            color: var(--accent-blue);
-            font-size: 1.22rem;
-        }
-        .info-card p {
-            margin: 0;
-        }
+        .info-card h3 { margin: 0 0 0.9rem 0; color: var(--accent-blue); font-size: 1.18rem; }
+        .info-card p { margin: 0; line-height: 1.6; }
         .lage-link {
             display: inline-block;
             margin-top: 1rem;
@@ -205,35 +202,98 @@
             font-weight: bold;
             transition: background 0.2s;
         }
-        .lage-link:hover {
-            background: var(--secondary-green);
-            color: var(--white);
+        .lage-link:hover { background: var(--secondary-green); color: var(--white); }
+
+        /* MODUS */
+        .modus-box {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 4px 18px rgba(33,115,92,0.09);
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 2rem 2rem 1.5rem 2rem;
         }
+        .modus-phase {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        .modus-phase:last-child { margin-bottom: 0; }
+        .modus-icon {
+            font-size: 1.8rem;
+            min-width: 2.5rem;
+            text-align: center;
+            margin-top: 0.1rem;
+        }
+        .modus-label {
+            font-size: 1.13rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-bottom: 0.25rem;
+        }
+        .modus-text { color: #444; font-size: 1.01rem; line-height: 1.55; }
+        .modus-divider {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 1.2rem 0;
+        }
+        .tiebreaker-list {
+            margin: 0.4rem 0 0 0;
+            padding-left: 1.3rem;
+            color: #444;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* TAGESABLAUF */
         .schedule-table {
-            margin: 2.5rem auto 1.5rem auto;
+            margin: 2rem auto 1.2rem auto;
             background: var(--white);
             border-radius: 12px;
             overflow-x: auto;
             box-shadow: 0 3px 16px rgba(24,53,119,0.07);
-            max-width: 850px;
+            max-width: 680px;
         }
-        .schedule-table table {
-            border-collapse: collapse;
-            width: 100%;
-        }
+        .schedule-table table { border-collapse: collapse; width: 100%; }
         .schedule-table th, .schedule-table td {
             padding: 0.75rem 1rem;
             border-bottom: 1px solid #eee;
             text-align: left;
         }
-        .schedule-table th {
+        .schedule-table th { background: var(--primary-green); color: var(--white); font-size: 1.05rem; }
+        .schedule-table tr:last-child td { border-bottom: none; }
+        .schedule-table td.highlight { font-weight: 700; color: var(--accent-blue); }
+        .schedule-table td.party { font-weight: 700; color: #b5451b; }
+
+        /* ANMELDUNG */
+        .anmeldung-box {
+            background: var(--white);
+            border-radius: 18px;
+            box-shadow: 0 4px 20px rgba(33,115,92,0.10);
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+        .anmeldung-box h3 { color: var(--primary-green); font-size: 1.6rem; margin-bottom: 1rem; }
+        .anmeldung-box p { color: #555; font-size: 1.05rem; margin-bottom: 1.5rem; }
+        .anmeldung-btn {
+            display: inline-block;
             background: var(--primary-green);
             color: var(--white);
-            font-size: 1.08rem;
+            font-weight: 700;
+            font-size: 1.15rem;
+            padding: 0.75rem 2.2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background 0.2s;
         }
-        .schedule-table tr:last-child td {
-            border-bottom: none;
-        }
+        .anmeldung-btn:hover { background: var(--accent-blue); }
+        .anmeldung-contact { margin-top: 1.2rem; font-size: 0.97rem; color: #777; }
+        .anmeldung-contact a { color: var(--primary-green); text-decoration: none; font-weight: 600; }
+
+        /* FOOTER */
         .footer {
             background: var(--dark-green);
             color: var(--white);
@@ -241,199 +301,219 @@
             text-align: center;
             margin-top: 3rem;
         }
-        .footer .logo-foot {
-            height: 42px;
-            margin-bottom: 0.6rem;
-        }
-        .footer a {
-            color: var(--white);
-            text-decoration: underline;
-        }
+        .footer .logo-foot { height: 42px; margin-bottom: 0.6rem; }
+
         @media (max-width: 700px) {
-            .hero h1 {
-                font-size: 1.6rem;
-            }
-            .hero-info {
-                max-width: 95vw;
-                padding: 1rem;
-            }
-            .info-grid, .teams-grid {
-                grid-template-columns: 1fr;
-            }
-            .section {
-                padding: 1.1rem 0.2rem;
-            }
-            .schedule-table {
-                font-size: 0.95rem;
-                margin-left: 0;
-                margin-right: 0;
-            }
-            .team-photo {
-                max-height: 110px;
-            }
+            .hero h1 { font-size: 1.6rem; }
+            .hero-info { max-width: 95vw; padding: 1rem; }
+            .info-grid, .teams-grid { grid-template-columns: 1fr; }
+            .section { padding: 1.1rem 0.5rem; }
+            .modus-box { padding: 1.2rem 1rem; }
         }
     </style>
 </head>
 <body>
+
     <!-- NAVIGATION -->
     <nav class="nav">
         <div class="container">
             <div class="nav-logo">
                 <img src="svlaim_logo.png" alt="SV München-Laim Logo">
-                <span class="nav-title">Vorbereitungs-Cup 2025</span>
+                <span class="nav-title">Vorbereitungs-Cup 2026</span>
             </div>
             <ul class="nav-links">
+                <li><a href="#modus">Modus</a></li>
                 <li><a href="#info">Info</a></li>
                 <li><a href="#teams">Teams</a></li>
-                <li><a href="#programm">Spielplan</a></li>
+                <li><a href="#anmeldung">Anmeldung</a></li>
             </ul>
         </div>
     </nav>
-    <!-- HERO SECTION -->
+
+    <!-- HERO -->
     <section class="hero">
-        <h1>Damen-Vorbereitungscup 2025</h1>
-        <div class="hero-date">Sonntag, 07. September 2025</div>
+        <div class="badge-invite">&#127944; Einladung</div>
+        <h1>Damen-Vorbereitungscup 2026</h1>
+        <div class="hero-date">Samstag, 5. September 2026</div>
         <div class="hero-subtitle">Das Handball-Event zur Saisonvorbereitung in München-Laim</div>
         <div class="hero-info">
             <strong>Ort:</strong> Riegerhofhalle, Riegerhofstraße 20, 80686 München<br>
-            <strong>Beginn:</strong> 10:30 Uhr Einlass & Aufwärmen<br>
-            <strong>Erstes Spiel:</strong> 11:00 Uhr<br>
-            <strong>Teams:</strong> 4 Damenmannschaften<br>
+            <strong>Teams:</strong> 5 Damenmannschaften<br>
+            <strong>Modus:</strong> Jeder gegen Jeden + Finale<br>
+            <strong>Spiele pro Team:</strong> mind. 4 Spiele<br>
+            <strong>After:</strong> Party im Bistro No.2 &#127881;
         </div>
     </section>
-    <!-- TEAMS SEKTION -->
-    <section class="section" id="teams">
-        <h2>Teams 2025</h2>
-        <div class="teams-grid">
-            <!-- Yellow Tigers -->
-            <div class="team-card">
-                <img class="team-photo" src="yellow.tigers.jpg" alt="Yellow Tigers Mannschaftsfoto">
-                <div class="team-name">HSG Weiterstadt/Braunshardt/Worfelden e.V.</div>
-                <div class="team-nick">Spitzname: Yellow Tigers</div>
-                <div class="team-liga">Regionalliga Hessen – 3. Platz (28 Punkte)</div>
-                <a class="team-link" href="https://www.hsgwbw.de/aktive/saison_2024-25/damen/damen-1.php" target="_blank">Zur Homepage</a>
+
+    <!-- TURNIERMODUS -->
+    <section class="section" id="modus">
+        <h2>Turniermodus</h2>
+        <div class="modus-box">
+
+            <div class="modus-phase">
+                <div class="modus-icon">&#9917;</div>
+                <div>
+                    <div class="modus-label">Vorrunde – Jeder gegen Jeden</div>
+                    <div class="modus-text">
+                        Alle 5 Teams spielen gegeneinander – jede Mannschaft absolviert <strong>4 Gruppenspiele</strong>.
+                        Es werden Punkte (Sieg = 2, Unentschieden = 1, Niederlage = 0) gesammelt.
+                        Am Ende ergibt sich eine Tabelle über alle 5 Teams.
+                    </div>
+                </div>
             </div>
-            <!-- TSV Bönnigheim -->
-            <div class="team-card">
-                <img class="team-photo" src="tsv.boennigheim.jpg" alt="TSV Bönnigheim Mannschaftsfoto">
-                <div class="team-name">TSV Bönnigheim</div>
-                <div class="team-nick">&nbsp;</div>
-                <div class="team-liga">Regionalliga Baden-Württemberg – 5. Platz (23 Punkte)</div>
-                <a class="team-link" href="http://www.handball-boennigheim.de/index.php/aktive/frauen-1?filter_tag[0]=2" target="_blank">Zur Homepage</a>
+
+            <hr class="modus-divider">
+
+            <div class="modus-phase">
+                <div class="modus-icon">&#127942;</div>
+                <div>
+                    <div class="modus-label">Finale – Platz 1 vs. Platz 2</div>
+                    <div class="modus-text">
+                        Die beiden bestplatzierten Teams der Vorrunde treffen im <strong>Finale</strong> aufeinander.
+                        Kein Spiel um Platz 3 – die Plätze 3–5 werden direkt durch die Tabelle vergeben.
+                    </div>
+                </div>
             </div>
-            <!-- SV München-Laim -->
-            <div class="team-card">
-                <img class="team-photo" src="first.ladies.jpg" alt="Laimer First Ladies Mannschaftsfoto">
-                <div class="team-name">SV München-Laim</div>
-                <div class="team-nick">Spitzname: Laimer First Ladies</div>
-                <div class="team-liga">Regionalliga Bayern – 8. Platz (19 Punkte)</div>
-                <a class="team-link" href="https://www.sv-laim-handball.de/teams/view/4" target="_blank">Zur Homepage</a>
+
+            <hr class="modus-divider">
+
+            <div class="modus-phase">
+                <div class="modus-icon">&#9878;&#65039;</div>
+                <div>
+                    <div class="modus-label">Platzierung bei Punktgleichheit</div>
+                    <div class="modus-text">Bei gleicher Punktzahl entscheidet in dieser Reihenfolge:</div>
+                    <ol class="tiebreaker-list">
+                        <li><strong>Tordifferenz</strong> (Tore erzielt minus Tore kassiert)</li>
+                        <li><strong>Anzahl geworfener Tore</strong> (mehr Tore = besser)</li>
+                        <li><strong>7-Meter-Schießen</strong> – 3 Schützinnen pro Team</li>
+                    </ol>
+                </div>
             </div>
-            <!-- Görlitzer HC (GÖRLS) -->
-            <div class="team-card">
-                <img class="team-photo" src="goerls.jpg" alt="Görlitzer HC GÖRLS Mannschaftsfoto">
-                <div class="team-name">Görlitzer HC e.V.</div>
-                <div class="team-nick">Spitzname: die GÖRLS</div>
-                <div class="team-liga">Regionalliga Sachsen – 3. Platz (33 Punkte)</div>
-                <a class="team-link" href="https://handball-goerls.de/1-frauen/" target="_blank">Zur Homepage</a>
-            </div>
+
         </div>
     </section>
-    <!-- TURNIERBESCHREIBUNG / INFOS -->
+
+    <!-- INFOS -->
     <section class="section" id="info">
         <h2>Über das Turnier</h2>
         <div class="info-grid">
             <div class="info-card">
-                <h3>Turniermodus</h3>
-                <p>4 Teams, Vorrunde im Modus „Jeder gegen Jeden“, danach Platzierungsspiele (Finale & Spiel um Platz 3). Jede Mannschaft garantiert drei Spiele plus ein Platzierungsspiel!</p>
-            </div>
-            <div class="info-card">
                 <h3>Austragungsort</h3>
                 <p>Riegerhofhalle in München-Laim – beste Bedingungen für Sport, Parkplätze und ÖPNV direkt vor Ort.<br>
-                <a class="lage-link" href="https://svlaim.de/unser-verein/lage/" target="_blank">Zur Lage & Anfahrt</a></p>
+                <a class="lage-link" href="https://svlaim.de/unser-verein/lage/" target="_blank">Zur Lage &amp; Anfahrt</a></p>
             </div>
             <div class="info-card">
                 <h3>Verpflegung</h3>
-                <p>Kiosk mit Snacks, warmen & kalten Getränken – beste Versorgung für Teams und Zuschauer!</p>
+                <p>Kiosk mit Snacks, warmen &amp; kalten Getränken – beste Versorgung für Teams und Zuschauer während des ganzen Turniertages!</p>
             </div>
             <div class="info-card">
-                <h3>Teams</h3>
-                <p>Laimer First Ladies, Yellow Tigers, TSV Bönnigheim und Görlitzer HC (GÖRLS) spielen um den Turniersieg!</p>
+                <h3>Zeitrahmen</h3>
+                <p>Einlass &amp; Aufwärmen ab 10:30 Uhr. Erstes Spiel um 11:00 Uhr. Finale &amp; Siegerehrung am Abend – danach Party im Bistro No.2!</p>
+            </div>
+            <div class="info-card">
+                <h3>Party – Bistro No.2 &#127881;</h3>
+                <p>Nach der Siegerehrung geht's ins Bistro No.2 – der Abend gehört uns! <strong>Open End.</strong> Alle Teams, Fans und Unterstützer sind herzlich eingeladen.</p>
             </div>
         </div>
     </section>
-    <!-- SPIELPLAN / PROGRAMM -->
+
+    <!-- TAGESABLAUF -->
     <section class="section" id="programm">
-        <h2>Programm & Zeitplan</h2>
+        <h2>Geplanter Tagesablauf</h2>
         <div class="schedule-table">
             <table>
                 <thead>
                     <tr>
-                        <th>Nr.</th>
-                        <th>Uhrzeit</th>
-                        <th>Begegnung</th>
+                        <th>Zeit</th>
+                        <th>Programmpunkt</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>11:00–11:41</td>
-                        <td>Laimer First Ladies – Yellow Tigers</td>
+                        <td>10:30 Uhr</td>
+                        <td>Einlass &amp; Aufwärmen</td>
                     </tr>
                     <tr>
-                        <td>2</td>
-                        <td>11:51–12:32</td>
-                        <td>TSV Bönnigheim – Görlitzer HC (GÖRLS)</td>
+                        <td>11:00 Uhr</td>
+                        <td>Anpfiff – Vorrunde beginnt</td>
                     </tr>
                     <tr>
-                        <td>3</td>
-                        <td>12:42–13:23</td>
-                        <td>Laimer First Ladies – TSV Bönnigheim</td>
+                        <td>11:00 – ca. 17:30 Uhr</td>
+                        <td>Vorrunde: 10 Spiele, Jeder gegen Jeden</td>
                     </tr>
                     <tr>
-                        <td>4</td>
-                        <td>13:33–14:14</td>
-                        <td>Yellow Tigers – Görlitzer HC (GÖRLS)</td>
+                        <td>ca. 17:45 Uhr</td>
+                        <td class="highlight">&#127942; Finale: Platz 1 vs. Platz 2</td>
                     </tr>
                     <tr>
-                        <td>5</td>
-                        <td>14:24–15:05</td>
-                        <td>Laimer First Ladies – Görlitzer HC (GÖRLS)</td>
+                        <td>ca. 18:45 Uhr</td>
+                        <td class="highlight">Siegerehrung</td>
                     </tr>
                     <tr>
-                        <td>6</td>
-                        <td>15:15–15:56</td>
-                        <td>Yellow Tigers – TSV Bönnigheim</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>16:10–16:25</td>
-                        <td>Spiel um Platz 3: Vorrundenplatz 3 vs. 4</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>16:35–16:50</td>
-                        <td>Finale: Vorrundenplatz 1 vs. 2</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>17:00–17:20</td>
-                        <td>Siegerehrung & Abschluss</td>
+                        <td>ab 19:00 Uhr</td>
+                        <td class="party">&#127881; Party – Bistro No.2 – Open End!</td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <div style="text-align:center;margin-top:1.7rem;color:#555;">
-            <em>Pause zwischen den Spielen: 10 Minuten | Erstes Spiel: 11:00 Uhr | Finale ab 16:35 Uhr | Siegerehrung ab 17:00 Uhr</em>
+        <div style="text-align:center;margin-top:1.2rem;color:#777;font-size:0.97rem;">
+            <em>Der genaue Spielplan mit Uhrzeiten und Paarungen wird nach Anmeldeschluss veröffentlicht.</em>
         </div>
     </section>
+
+    <!-- TEAMS -->
+    <section class="section" id="teams">
+        <h2>Teilnehmende Teams 2026</h2>
+        <p style="text-align:center;color:#666;font-size:1.05rem;margin-top:-1rem;margin-bottom:0.5rem;">
+            Die eingeladenen Teams werden nach Anmeldeschluss bekanntgegeben.
+        </p>
+        <div class="teams-grid">
+            <div class="team-card">
+                <img class="team-logo" src="svlaim_logo.png" alt="SV München-Laim Logo">
+                <div class="team-name">SV München-Laim</div>
+                <div class="team-nick">Laimer First Ladies – Gastgeber</div>
+                <div class="team-liga">Regionalliga Bayern</div>
+                <a class="team-link" href="https://www.sv-laim-handball.de/teams/view/4" target="_blank">Zur Homepage</a>
+            </div>
+            <div class="team-card placeholder">
+                <div class="team-placeholder-icon">&#9977;</div>
+                <div class="team-placeholder-text">Team 2<br><span style="font-weight:400;font-size:0.9rem;">wird bekannt gegeben</span></div>
+            </div>
+            <div class="team-card placeholder">
+                <div class="team-placeholder-icon">&#9977;</div>
+                <div class="team-placeholder-text">Team 3<br><span style="font-weight:400;font-size:0.9rem;">wird bekannt gegeben</span></div>
+            </div>
+            <div class="team-card placeholder">
+                <div class="team-placeholder-icon">&#9977;</div>
+                <div class="team-placeholder-text">Team 4<br><span style="font-weight:400;font-size:0.9rem;">wird bekannt gegeben</span></div>
+            </div>
+            <div class="team-card placeholder">
+                <div class="team-placeholder-icon">&#9977;</div>
+                <div class="team-placeholder-text">Team 5<br><span style="font-weight:400;font-size:0.9rem;">wird bekannt gegeben</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ANMELDUNG -->
+    <section class="section" id="anmeldung">
+        <h2>Anmeldung &amp; Kontakt</h2>
+        <div class="anmeldung-box">
+            <h3>Jetzt anmelden!</h3>
+            <p>Ihr habt Interesse, am Vorbereitungs-Cup 2026 teilzunehmen? Dann meldet euch direkt bei uns. Die Plätze sind begrenzt – wir freuen uns auf euch!</p>
+            <a class="anmeldung-btn" href="mailto:oliver.goetsch@sv-laim-handball.de">Anmeldung per E-Mail</a>
+            <div class="anmeldung-contact">
+                Fragen? Schreibt uns: <a href="mailto:oliver.goetsch@sv-laim-handball.de">oliver.goetsch@sv-laim-handball.de</a>
+            </div>
+        </div>
+    </section>
+
     <!-- FOOTER -->
     <footer class="footer">
         <img class="logo-foot" src="svlaim_logo.png" alt="SV München-Laim Logo">
-        <div style="margin-bottom:0.7rem;font-weight:600;">SV München-Laim e.V. – Vorbereitungs-Cup 2025</div>
+        <div style="margin-bottom:0.7rem;font-weight:600;">SV München-Laim e.V. – Vorbereitungs-Cup 2026</div>
         <div>Riegerhofhalle, Riegerhofstraße 20, 80686 München</div>
-        <div>Weitere Infos & Anfahrt: <a href="https://svlaim.de/unser-verein/lage/" target="_blank">svlaim.de/unser-verein/lage/</a></div>
-        <div style="margin-top:0.9rem;font-size:0.96em;opacity:0.78">&copy; 2025 SV München-Laim e.V. | Alle Rechte vorbehalten</div>
+        <div style="margin-top:0.9rem;font-size:0.96em;opacity:0.78">&copy; 2026 SV München-Laim e.V. | Alle Rechte vorbehalten</div>
     </footer>
+
 </body>
 </html>
